@@ -1,0 +1,184 @@
+﻿<Window x:Class="CyberSecurity2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CyberSecurity2.0"
+        Height="750"
+        Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="#111111">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= HEADER ================= -->
+
+        <Border Background="#202020"
+                BorderBrush="Lime"
+                BorderThickness="2"
+                CornerRadius="10"
+                Padding="15">
+
+            <StackPanel>
+
+                <TextBlock Text="🔐 CyberSecurity2.0 🔐"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="Lime"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock Text="Cybersecurity Awareness Chatbot"
+                           FontSize="18"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <Grid Grid.Row="1" Margin="0,15,0,15">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="3*" />
+
+                <ColumnDefinition Width="2*" />
+
+            </Grid.ColumnDefinitions>
+
+            <!-- ================= CHATBOT ================= -->
+
+            <StackPanel Grid.Column="0">
+
+                <Label Content="Chat Window"
+                       Foreground="White"
+                       FontWeight="Bold"/>
+
+                <RichTextBox x:Name="ChatBox"
+                             Height="430"
+                             Background="Black"
+                             Foreground="Lime"
+                             FontFamily="Consolas"
+                             FontSize="15"
+                             IsReadOnly="True"/>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,10,0,0">
+
+                    <TextBox x:Name="UserInput"
+                             Width="344"
+                             Height="35"
+                             FontSize="16"/>
+
+                    <Button x:Name="SendButton"
+                            Width="120"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            Content="Send"
+                            Background="DarkGreen"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="SendButton_Click"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <!-- ================= RIGHT PANEL ================= -->
+
+            <StackPanel Grid.Column="1"
+                        Margin="20,0,0,0">
+
+                <!-- TASKS -->
+
+                <GroupBox Header="Task Assistant"
+                          Foreground="White"
+                          Margin="0,0,0,15">
+
+                    <StackPanel Margin="10">
+
+                        <TextBox x:Name="txtTask"
+                                 Height="30"
+                                 Margin="0,5"
+                                 ToolTip="Task Title"/>
+
+                        <TextBox x:Name="txtDescription"
+                                 Height="60"
+                                 AcceptsReturn="True"
+                                 Margin="0,5"
+                                 ToolTip="Description"/>
+
+                        <DatePicker x:Name="dpReminder"
+                                    Margin="0,5"/>
+
+                        <Button x:Name="btnAddTask"
+        Content="Add Task"
+        Height="35"
+        Margin="0,10,0,0"
+        Click="btnAddTask_Click"/>
+
+                        <Button x:Name="btnShowTasks"
+        Content="Show Tasks"
+        Height="35"
+        Margin="0,5"
+        Click="btnShowTasks_Click"/>
+
+                    </StackPanel>
+
+                </GroupBox>
+
+                <!-- QUIZ -->
+
+                <GroupBox Header="Cybersecurity Quiz"
+                          Foreground="White"
+                          Margin="0,0,0,15">
+
+                    <StackPanel Margin="10">
+
+                        <Button x:Name="btnQuiz"
+        Content="Start Quiz"
+        Height="35"
+        Click="btnQuiz_Click"/>
+
+                    </StackPanel>
+
+                </GroupBox>
+
+                <!-- ACTIVITY LOG -->
+
+                <GroupBox Header="Activity Log"
+                          Foreground="White">
+
+                    <ListBox x:Name="lstActivity"
+                             Height="170"/>
+
+                </GroupBox>
+
+            </StackPanel>
+
+        </Grid>
+
+        <!-- ================= FOOTER ================= -->
+
+        <Border Grid.Row="2"
+                Background="#202020"
+                BorderBrush="Lime"
+                BorderThickness="2"
+                CornerRadius="8"
+                Padding="8">
+
+            <TextBlock Text="CyberSecurity2.0 © 2026"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+
+        </Border>
+
+    </Grid>
+
+</Window>
